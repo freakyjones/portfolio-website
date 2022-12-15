@@ -68,6 +68,24 @@ img {
     P {
       font-size: 14px;
       color: #949495;
+      line-height: 1.5rem;
+    }
+  }
+  &__nav {
+    &__navlist {
+      list-style-type: none;
+      text-decoration: none;
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &--line {
+          width: 2rem;
+          height: 1px;
+          display: inline-block;
+          background: #fafafa;
+        }
+      }
     }
   }
 }

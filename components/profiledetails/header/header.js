@@ -12,15 +12,21 @@ function Header() {
         </p>
       </div>
       <nav className="header__nav">
-        <ul className="header__navlist">
-          <li className="header__navlist__item">
-            01 <span></span> Projects
+        <ul className="header__nav__navlist">
+          <li className="header__nav__navlist__item">
+            <p>01</p>
+            <span className="header__nav__navlist__item--line"></span>
+            <p>Projects</p>
           </li>
-          <li>
-            01 <span></span> Projects
+          <li className="header__nav__navlist__item">
+            <p>02</p>
+            <span className="header__nav__navlist__item--line"></span>
+            <p>Skills</p>
           </li>
-          <li>
-            01 <span></span> Projects
+          <li className="header__nav__navlist__item">
+            <p>01</p>
+            <span className="header__nav__navlist__item--line"></span>
+            <p>Current Learning</p>
           </li>
         </ul>
       </nav>
