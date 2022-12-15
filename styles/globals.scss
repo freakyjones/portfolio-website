@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: black;
+  color: #fff;
 }
 
 a {
@@ -15,15 +17,18 @@ a {
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  min-height: 100vh;
 }
-.home {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -33,3 +38,95 @@ a {
     background: black;
   }
 }
+
+// <------------------Home----------------->
+.home {
+  min-height: 100vh;
+}
+
+// <--------------Profile Details --------------->
+.profile__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+// header --------------
+
+.header {
+  padding: 10px;
+  &__content {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 16px;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    P {
+      font-size: 14px;
+      color: #949495;
+    }
+  }
+}
+
+// Footer -----------------
+
+.footer {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+
+  width: 408px;
+  gap: 20px;
+  &__profile {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  &__twitter {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    &__link {
+      width: 18px;
+      height: 21px;
+      position: relative;
+    }
+    &__text {
+    }
+    &__img {
+      width: 16px;
+      height: 16px;
+      position: relative;
+    }
+  }
+  &__github {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &__link {
+      width: 18px;
+      height: 21px;
+      position: relative;
+    }
+    &__img {
+      width: 16px;
+      height: 16px;
+      position: relative;
+    }
+    &__text {
+    }
+  }
+}
+
+// <--------------Profile summery --------------->

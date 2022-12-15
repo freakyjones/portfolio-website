@@ -1,5 +1,13 @@
+import Footer from "./footer/footer";
+import Header from "./header/header";
+
 function ProfileDetails() {
-  return <h1>Abhilash Pandey</h1>;
+  return (
+    <div className="profile__details">
+      <Header />
+      <Footer />
+    </div>
+  );
 }
 
 export default ProfileDetails;

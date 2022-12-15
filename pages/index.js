@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <Container>
       <div className="home">
-        <ProfileSummery />
         <ProfileDetails />
+        <ProfileSummery />
       </div>
     </Container>
   );
