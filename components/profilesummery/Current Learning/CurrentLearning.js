@@ -1,5 +1,9 @@
 function CurrentLearning() {
-  return <h1>Current Learning</h1>;
+  return (
+    <div className="currentlearning">
+      <h2>Current Learning</h2>
+    </div>
+  );
 }
 
 export default CurrentLearning;
