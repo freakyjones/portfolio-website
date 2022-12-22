@@ -2,6 +2,7 @@ import ProjectBox from "./ProjectBox/ProjectBox";
 
 export const DetailsProject = [
   {
+    id: 1,
     technology: ["React, Redux"],
     name: "Recipe website",
     description: "hello i am recipe website",
@@ -9,6 +10,7 @@ export const DetailsProject = [
     website: "",
   },
   {
+    id: 2,
     technology: ["React, Redux"],
     name: "Recipe website",
     description: "hello i am recipe website",
@@ -16,6 +18,7 @@ export const DetailsProject = [
     website: "",
   },
   {
+    id: 3,
     technology: ["React, Redux"],
     name: "Recipe website",
     description: "hello i am recipe website",
@@ -32,6 +35,7 @@ function Projects() {
         {DetailsProject.map((projectinfo) => {
           return (
             <ProjectBox
+              key={projectinfo.id}
               description={projectinfo.description}
               name={projectinfo.name}
               technology={projectinfo.technology}

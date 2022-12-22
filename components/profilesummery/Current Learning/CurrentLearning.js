@@ -1,9 +1,9 @@
-function CurrentLearning() {
+function WorkExperience() {
   return (
-    <div className="currentlearning">
-      <h2>Current Learning</h2>
+    <div className="workexperience">
+      <h2>Work Experience</h2>
     </div>
   );
 }
 
-export default CurrentLearning;
+export default WorkExperience;
