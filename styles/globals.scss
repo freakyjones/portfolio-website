@@ -57,17 +57,19 @@ img {
 // header --------------
 
 .header {
-  padding: 15px;
+  padding: 24px;
   &__content {
     h1 {
       font-size: 2.5rem;
       line-height: 16px;
     }
     h2 {
-      font-size: 1rem;
+      margin-top: 24px;
+      font-size: 1.5rem;
       font-weight: bold;
     }
     P {
+      margin-top: 24px;
       font-size: 14px;
       color: #949495;
       line-height: 1.5rem;
@@ -96,7 +98,7 @@ img {
 
 .footer {
   display: flex;
-  padding: 15px;
+  padding: 24px;
   align-items: center;
 
   gap: 20px;
@@ -149,10 +151,12 @@ img {
 }
 
 // <--------------Profile summery --------------->
-
+// .profileSummery {
+//   padding: 24px 0px;
+// }
 // Projects ------------
 .projects {
-  padding: 15px;
+  padding: 24px;
   &__container {
     margin-top: 32px;
     display: flex;
@@ -165,16 +169,34 @@ img {
   height: 215px;
   background-color: #202022;
   width: 100%;
+  padding: 40px;
 }
 
 // Skills --------------
-
 .skills {
-  padding: 15px;
+  padding: 24px;
+  &__container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.skillbox {
+  height: 215px;
+  background-color: #202022;
+  width: 100%;
+  padding: 40px;
 }
 
 // current-learning --------------
 
-.workexperience {
-  padding: 15px;
+.contactme {
+  padding: 24px;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

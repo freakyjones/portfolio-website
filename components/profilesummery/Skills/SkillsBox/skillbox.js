@@ -8,6 +8,7 @@ function SkillBox({ name, logo, totalStars, activeStars }) {
       .map((_, i) => i + 1)
       .map((idx) => (
         <svg
+          key={idx}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -25,8 +26,16 @@ function SkillBox({ name, logo, totalStars, activeStars }) {
         <h2>{name}</h2>
       </div>
       <div className="skillbox__body">
-        <div className="skillbox__body__image">
-          <Image src={logo} alt="profilephoto" width="20" height="20" />
+        <div
+          className="skillbox__body__image"
+          style={{ position: "relative", width: "40px", height: "40px" }}
+        >
+          <Image
+            src={logo}
+            alt="profilephoto"
+            layout="fill"
+            objectFit="contain"
+          />
         </div>
         <div className="skillbox__body__rating">
           <div className="skillbox__body__rating--star">{starRating}</div>

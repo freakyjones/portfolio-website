@@ -11,7 +11,7 @@ function Header() {
           world.
         </p>
       </div>
-      <nav className="header__nav">
+      {/* <nav className="header__nav">
         <ul className="header__nav__navlist">
           <li className="header__nav__navlist__item">
             <p>01</p>
@@ -29,7 +29,7 @@ function Header() {
             <p>Current Learning</p>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </div>
   );
 }

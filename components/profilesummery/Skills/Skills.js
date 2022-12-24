@@ -51,6 +51,7 @@ export const skillsInfo = [
 function Skills() {
   return (
     <div className="skills">
+      <h2>Skills</h2>
       <div className="skills__container">
         {skillsInfo.map((skill) => {
           return (

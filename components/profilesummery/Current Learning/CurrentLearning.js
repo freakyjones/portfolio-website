@@ -1,7 +1,12 @@
+import ContactForm from "./contactme.js/contactme";
+
 function WorkExperience() {
   return (
-    <div className="workexperience">
-      <h2>Work Experience</h2>
+    <div className="contactme">
+      <h2>Contact Me</h2>
+      <div className="contactform">
+        <ContactForm />
+      </div>
     </div>
   );
 }
