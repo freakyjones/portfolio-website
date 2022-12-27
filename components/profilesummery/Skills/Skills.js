@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import useWindowDimensions from "../../../hooks/useDimensionHooks";
 import SkillBox from "./SkillsBox/skillbox";
 
 export const skillsInfo = [
@@ -49,9 +51,18 @@ export const skillsInfo = [
 ];
 
 function Skills() {
+  const { width, height } = useWindowDimensions();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (width < 900) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [width]);
   return (
     <div className="skills">
-      <h2>Skills</h2>
+      {isMobile && <h2>Skills</h2>}
       <div className="skills__container">
         {skillsInfo.map((skill) => {
           return (

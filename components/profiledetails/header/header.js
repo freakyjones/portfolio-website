@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import useWindowDimensions from "../../../hooks/useDimensionHooks";
+
 function Header() {
+  const { width, height } = useWindowDimensions();
+  const [isNav, setIsNav] = useState(false);
+
+  useEffect(() => {
+    if (width > 900) {
+      setIsNav(true);
+    } else {
+      setIsNav(false);
+    }
+  }, [width]);
   return (
     <div className="header">
       <div className="header__content">
@@ -11,25 +24,27 @@ function Header() {
           world.
         </p>
       </div>
-      {/* <nav className="header__nav">
-        <ul className="header__nav__navlist">
-          <li className="header__nav__navlist__item">
-            <p>01</p>
-            <span className="header__nav__navlist__item--line"></span>
-            <p>Projects</p>
-          </li>
-          <li className="header__nav__navlist__item">
-            <p>02</p>
-            <span className="header__nav__navlist__item--line"></span>
-            <p>Skills</p>
-          </li>
-          <li className="header__nav__navlist__item">
-            <p>01</p>
-            <span className="header__nav__navlist__item--line"></span>
-            <p>Current Learning</p>
-          </li>
-        </ul>
-      </nav> */}
+      {isNav && (
+        <nav className="header__nav">
+          <ul className="header__nav__navlist">
+            <li className="header__nav__navlist__item">
+              <p>01</p>
+              <span className="header__nav__navlist__item--line"></span>
+              <p>Projects</p>
+            </li>
+            <li className="header__nav__navlist__item">
+              <p>02</p>
+              <span className="header__nav__navlist__item--line"></span>
+              <p>Skills</p>
+            </li>
+            <li className="header__nav__navlist__item">
+              <p>03</p>
+              <span className="header__nav__navlist__item--line"></span>
+              <p>Current Learning</p>
+            </li>
+          </ul>
+        </nav>
+      )}
     </div>
   );
 }

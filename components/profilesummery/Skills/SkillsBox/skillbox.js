@@ -1,7 +1,10 @@
 import Image from "next/image";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import useWindowDimensions from "../../../../hooks/useDimensionHooks";
 
 function SkillBox({ name, logo, totalStars, activeStars }) {
+  const { width, height } = useWindowDimensions();
+  const [isMobile, setIsMobile] = useState(false);
   const starRating = useMemo(() => {
     return new Array(totalStars)
       .fill(0)
@@ -20,6 +23,13 @@ function SkillBox({ name, logo, totalStars, activeStars }) {
       ));
   }, [totalStars, activeStars]);
 
+  useEffect(() => {
+    if (width < 900) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [width]);
   return (
     <div className="skillbox">
       <div className="skillbox__header">

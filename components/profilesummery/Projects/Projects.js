@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import useWindowDimensions from "../../../hooks/useDimensionHooks";
 import ProjectBox from "./ProjectBox/ProjectBox";
 
 export const DetailsProject = [
@@ -28,9 +30,19 @@ export const DetailsProject = [
 ];
 
 function Projects() {
+  const { width, height } = useWindowDimensions();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (width < 900) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [width]);
   return (
     <div className="projects">
-      <h2>Projects</h2>
+      {isMobile && <h2>Projects</h2>}
       <div className="projects__container">
         {DetailsProject.map((projectinfo) => {
           return (

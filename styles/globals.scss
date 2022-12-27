@@ -200,3 +200,47 @@ img {
     gap: 10px;
   }
 }
+
+@media screen and (min-width: 900px) {
+  // home ---------------->
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .profile__details {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    padding: 50px 0px;
+  }
+  .header {
+    width: 100%;
+    max-width: 450px;
+    &__content {
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        margin-top: 32px;
+      }
+      p {
+        line-height: 2rem;
+      }
+    }
+    &__nav {
+      margin-top: 50px;
+      &__navlist {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        &__navlist__item {
+          &--line {
+            margin: 0px 24px;
+          }
+        }
+      }
+    }
+  }
+}
