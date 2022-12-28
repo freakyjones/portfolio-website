@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useWindowDimensions from "../../../hooks/useDimensionHooks";
 import ProjectBox from "./ProjectBox/ProjectBox";
 
@@ -29,9 +29,17 @@ export const DetailsProject = [
   },
 ];
 
-function Projects() {
+function Projects({ setCurrentSection }) {
   const { width, height } = useWindowDimensions();
   const [isMobile, setIsMobile] = useState(false);
+  const projectRef = useRef();
+
+  const currentSectionCallback = (entries) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setCurrentSection("projects");
+    }
+  };
 
   useEffect(() => {
     if (width < 900) {
@@ -40,8 +48,18 @@ function Projects() {
       setIsMobile(false);
     }
   }, [width]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(currentSectionCallback);
+    if (projectRef.current) observer.observe(projectRef.current);
+
+    return () => {
+      if (projectRef.current) observer.unobserve(projectRef.current);
+    };
+  }, [projectRef]);
+
   return (
-    <div className="projects">
+    <div className="projects" ref={projectRef}>
       {isMobile && <h2>Projects</h2>}
       <div className="projects__container">
         {DetailsProject.map((projectinfo) => {

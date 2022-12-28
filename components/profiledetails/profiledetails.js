@@ -1,10 +1,13 @@
 import Footer from "./footer/footer";
 import Header from "./header/header";
 
-function ProfileDetails() {
+function ProfileDetails({ currentSection, setCurrentSection }) {
   return (
     <div className="profile__details">
-      <Header />
+      <Header
+        currentSection={currentSection}
+        setCurrentSection={setCurrentSection}
+      />
       <Footer />
     </div>
   );

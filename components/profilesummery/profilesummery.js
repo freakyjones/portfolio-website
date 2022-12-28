@@ -2,12 +2,12 @@ import CurrentLearning from "./Current Learning/CurrentLearning";
 import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
 
-function ProfileSummery() {
+function ProfileSummery({ currentSection, setCurrentSection }) {
   return (
     <div className="profileSummery">
-      <Projects />
-      <Skills />
-      <CurrentLearning />
+      <Projects setCurrentSection={setCurrentSection} />
+      <Skills setCurrentSection={setCurrentSection} />
+      <CurrentLearning setCurrentSection={setCurrentSection} />
     </div>
   );
 }

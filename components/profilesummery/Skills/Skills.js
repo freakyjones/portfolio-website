@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useWindowDimensions from "../../../hooks/useDimensionHooks";
 import SkillBox from "./SkillsBox/skillbox";
 
@@ -50,9 +50,20 @@ export const skillsInfo = [
   },
 ];
 
-function Skills() {
+function Skills({ setCurrentSection }) {
   const { width, height } = useWindowDimensions();
   const [isMobile, setIsMobile] = useState(false);
+  const skillRef = useRef();
+
+  const currentSectionCallback = (entries) => {
+    const [entry] = entries;
+
+    if (entry.isIntersecting) {
+      console.log("skill happening");
+      setCurrentSection("skills");
+    }
+  };
+
   useEffect(() => {
     if (width < 900) {
       setIsMobile(true);
@@ -60,8 +71,18 @@ function Skills() {
       setIsMobile(false);
     }
   }, [width]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(currentSectionCallback);
+    if (skillRef.current) observer.observe(skillRef.current);
+
+    return () => {
+      if (skillRef.current) observer.unobserve(skillRef.current);
+    };
+  }, [skillRef]);
+
   return (
-    <div className="skills">
+    <div className="skills" ref={skillRef}>
       {isMobile && <h2>Skills</h2>}
       <div className="skills__container">
         {skillsInfo.map((skill) => {
